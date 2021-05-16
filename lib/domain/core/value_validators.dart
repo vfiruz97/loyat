@@ -22,6 +22,18 @@ Either<ValueFailure<String>, String> validateStringNotMaxLength(
   }
 }
 
+Either<ValueFailure<String>, String> validateStringNotMinLength(
+    String input, int minLength) {
+  if (input.length >= minLength) {
+    return right(input);
+  } else {
+    return left(ValueFailure.minLength(
+      failedValue: input,
+      minLength: minLength,
+    ));
+  }
+}
+
 Either<ValueFailure<String>, String> validateEmailAdress(String input) {
   const emailRegex =
       r"""^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$""";

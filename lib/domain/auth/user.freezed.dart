@@ -17,18 +17,18 @@ class _$UserTearOff {
   const _$UserTearOff();
 
   _User call(
-      {required String email,
-      required String firstName,
-      required String surname,
-      required String secondName,
-      required String telNumber,
-      required String password}) {
+      {required EmailAddress email,
+      required FirstName firstName,
+      required Surname surname,
+      required SecondName secondName,
+      required Telephone telephone,
+      required Password password}) {
     return _User(
       email: email,
       firstName: firstName,
       surname: surname,
       secondName: secondName,
-      telNumber: telNumber,
+      telephone: telephone,
       password: password,
     );
   }
@@ -39,12 +39,12 @@ const $User = _$UserTearOff();
 
 /// @nodoc
 mixin _$User {
-  String get email => throw _privateConstructorUsedError;
-  String get firstName => throw _privateConstructorUsedError;
-  String get surname => throw _privateConstructorUsedError;
-  String get secondName => throw _privateConstructorUsedError;
-  String get telNumber => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
+  EmailAddress get email => throw _privateConstructorUsedError;
+  FirstName get firstName => throw _privateConstructorUsedError;
+  Surname get surname => throw _privateConstructorUsedError;
+  SecondName get secondName => throw _privateConstructorUsedError;
+  Telephone get telephone => throw _privateConstructorUsedError;
+  Password get password => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -55,12 +55,12 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
   $Res call(
-      {String email,
-      String firstName,
-      String surname,
-      String secondName,
-      String telNumber,
-      String password});
+      {EmailAddress email,
+      FirstName firstName,
+      Surname surname,
+      SecondName secondName,
+      Telephone telephone,
+      Password password});
 }
 
 /// @nodoc
@@ -77,34 +77,34 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object? firstName = freezed,
     Object? surname = freezed,
     Object? secondName = freezed,
-    Object? telNumber = freezed,
+    Object? telephone = freezed,
     Object? password = freezed,
   }) {
     return _then(_value.copyWith(
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as EmailAddress,
       firstName: firstName == freezed
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as FirstName,
       surname: surname == freezed
           ? _value.surname
           : surname // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Surname,
       secondName: secondName == freezed
           ? _value.secondName
           : secondName // ignore: cast_nullable_to_non_nullable
-              as String,
-      telNumber: telNumber == freezed
-          ? _value.telNumber
-          : telNumber // ignore: cast_nullable_to_non_nullable
-              as String,
+              as SecondName,
+      telephone: telephone == freezed
+          ? _value.telephone
+          : telephone // ignore: cast_nullable_to_non_nullable
+              as Telephone,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Password,
     ));
   }
 }
@@ -115,12 +115,12 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$UserCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String email,
-      String firstName,
-      String surname,
-      String secondName,
-      String telNumber,
-      String password});
+      {EmailAddress email,
+      FirstName firstName,
+      Surname surname,
+      SecondName secondName,
+      Telephone telephone,
+      Password password});
 }
 
 /// @nodoc
@@ -138,34 +138,34 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object? firstName = freezed,
     Object? surname = freezed,
     Object? secondName = freezed,
-    Object? telNumber = freezed,
+    Object? telephone = freezed,
     Object? password = freezed,
   }) {
     return _then(_User(
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as EmailAddress,
       firstName: firstName == freezed
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as FirstName,
       surname: surname == freezed
           ? _value.surname
           : surname // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Surname,
       secondName: secondName == freezed
           ? _value.secondName
           : secondName // ignore: cast_nullable_to_non_nullable
-              as String,
-      telNumber: telNumber == freezed
-          ? _value.telNumber
-          : telNumber // ignore: cast_nullable_to_non_nullable
-              as String,
+              as SecondName,
+      telephone: telephone == freezed
+          ? _value.telephone
+          : telephone // ignore: cast_nullable_to_non_nullable
+              as Telephone,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Password,
     ));
   }
 }
@@ -178,25 +178,25 @@ class _$_User implements _User {
       required this.firstName,
       required this.surname,
       required this.secondName,
-      required this.telNumber,
+      required this.telephone,
       required this.password});
 
   @override
-  final String email;
+  final EmailAddress email;
   @override
-  final String firstName;
+  final FirstName firstName;
   @override
-  final String surname;
+  final Surname surname;
   @override
-  final String secondName;
+  final SecondName secondName;
   @override
-  final String telNumber;
+  final Telephone telephone;
   @override
-  final String password;
+  final Password password;
 
   @override
   String toString() {
-    return 'User(email: $email, firstName: $firstName, surname: $surname, secondName: $secondName, telNumber: $telNumber, password: $password)';
+    return 'User(email: $email, firstName: $firstName, surname: $surname, secondName: $secondName, telephone: $telephone, password: $password)';
   }
 
   @override
@@ -214,9 +214,9 @@ class _$_User implements _User {
             (identical(other.secondName, secondName) ||
                 const DeepCollectionEquality()
                     .equals(other.secondName, secondName)) &&
-            (identical(other.telNumber, telNumber) ||
+            (identical(other.telephone, telephone) ||
                 const DeepCollectionEquality()
-                    .equals(other.telNumber, telNumber)) &&
+                    .equals(other.telephone, telephone)) &&
             (identical(other.password, password) ||
                 const DeepCollectionEquality()
                     .equals(other.password, password)));
@@ -229,7 +229,7 @@ class _$_User implements _User {
       const DeepCollectionEquality().hash(firstName) ^
       const DeepCollectionEquality().hash(surname) ^
       const DeepCollectionEquality().hash(secondName) ^
-      const DeepCollectionEquality().hash(telNumber) ^
+      const DeepCollectionEquality().hash(telephone) ^
       const DeepCollectionEquality().hash(password);
 
   @JsonKey(ignore: true)
@@ -240,25 +240,25 @@ class _$_User implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {required String email,
-      required String firstName,
-      required String surname,
-      required String secondName,
-      required String telNumber,
-      required String password}) = _$_User;
+      {required EmailAddress email,
+      required FirstName firstName,
+      required Surname surname,
+      required SecondName secondName,
+      required Telephone telephone,
+      required Password password}) = _$_User;
 
   @override
-  String get email => throw _privateConstructorUsedError;
+  EmailAddress get email => throw _privateConstructorUsedError;
   @override
-  String get firstName => throw _privateConstructorUsedError;
+  FirstName get firstName => throw _privateConstructorUsedError;
   @override
-  String get surname => throw _privateConstructorUsedError;
+  Surname get surname => throw _privateConstructorUsedError;
   @override
-  String get secondName => throw _privateConstructorUsedError;
+  SecondName get secondName => throw _privateConstructorUsedError;
   @override
-  String get telNumber => throw _privateConstructorUsedError;
+  Telephone get telephone => throw _privateConstructorUsedError;
   @override
-  String get password => throw _privateConstructorUsedError;
+  Password get password => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;

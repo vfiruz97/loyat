@@ -41,6 +41,13 @@ class _$ValueFailureTearOff {
     );
   }
 
+  MinLength<T> minLength<T>({required T failedValue, required int minLength}) {
+    return MinLength<T>(
+      failedValue: failedValue,
+      minLength: minLength,
+    );
+  }
+
   InvalidTelephone<T> invalidTelephone<T>({required T failedValue}) {
     return InvalidTelephone<T>(
       failedValue: failedValue,
@@ -61,6 +68,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue, int maxLength) maxLength,
+    required TResult Function(T failedValue, int minLength) minLength,
     required TResult Function(T failedValue) invalidTelephone,
   }) =>
       throw _privateConstructorUsedError;
@@ -70,6 +78,7 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue, int maxLength)? maxLength,
+    TResult Function(T failedValue, int minLength)? minLength,
     TResult Function(T failedValue)? invalidTelephone,
     required TResult orElse(),
   }) =>
@@ -80,6 +89,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(Empty<T> value) empty,
     required TResult Function(MaxLength<T> value) maxLength,
+    required TResult Function(MinLength<T> value) minLength,
     required TResult Function(InvalidTelephone<T> value) invalidTelephone,
   }) =>
       throw _privateConstructorUsedError;
@@ -89,6 +99,7 @@ mixin _$ValueFailure<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(Empty<T> value)? empty,
     TResult Function(MaxLength<T> value)? maxLength,
+    TResult Function(MinLength<T> value)? minLength,
     TResult Function(InvalidTelephone<T> value)? invalidTelephone,
     required TResult orElse(),
   }) =>
@@ -201,6 +212,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue, int maxLength) maxLength,
+    required TResult Function(T failedValue, int minLength) minLength,
     required TResult Function(T failedValue) invalidTelephone,
   }) {
     return invalidEmail(failedValue);
@@ -213,6 +225,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue, int maxLength)? maxLength,
+    TResult Function(T failedValue, int minLength)? minLength,
     TResult Function(T failedValue)? invalidTelephone,
     required TResult orElse(),
   }) {
@@ -229,6 +242,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(Empty<T> value) empty,
     required TResult Function(MaxLength<T> value) maxLength,
+    required TResult Function(MinLength<T> value) minLength,
     required TResult Function(InvalidTelephone<T> value) invalidTelephone,
   }) {
     return invalidEmail(this);
@@ -241,6 +255,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(Empty<T> value)? empty,
     TResult Function(MaxLength<T> value)? maxLength,
+    TResult Function(MinLength<T> value)? minLength,
     TResult Function(InvalidTelephone<T> value)? invalidTelephone,
     required TResult orElse(),
   }) {
@@ -334,6 +349,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue, int maxLength) maxLength,
+    required TResult Function(T failedValue, int minLength) minLength,
     required TResult Function(T failedValue) invalidTelephone,
   }) {
     return shortPassword(failedValue);
@@ -346,6 +362,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue, int maxLength)? maxLength,
+    TResult Function(T failedValue, int minLength)? minLength,
     TResult Function(T failedValue)? invalidTelephone,
     required TResult orElse(),
   }) {
@@ -362,6 +379,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(Empty<T> value) empty,
     required TResult Function(MaxLength<T> value) maxLength,
+    required TResult Function(MinLength<T> value) minLength,
     required TResult Function(InvalidTelephone<T> value) invalidTelephone,
   }) {
     return shortPassword(this);
@@ -374,6 +392,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(Empty<T> value)? empty,
     TResult Function(MaxLength<T> value)? maxLength,
+    TResult Function(MinLength<T> value)? minLength,
     TResult Function(InvalidTelephone<T> value)? invalidTelephone,
     required TResult orElse(),
   }) {
@@ -464,6 +483,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue, int maxLength) maxLength,
+    required TResult Function(T failedValue, int minLength) minLength,
     required TResult Function(T failedValue) invalidTelephone,
   }) {
     return empty(failedValue);
@@ -476,6 +496,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue, int maxLength)? maxLength,
+    TResult Function(T failedValue, int minLength)? minLength,
     TResult Function(T failedValue)? invalidTelephone,
     required TResult orElse(),
   }) {
@@ -492,6 +513,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(Empty<T> value) empty,
     required TResult Function(MaxLength<T> value) maxLength,
+    required TResult Function(MinLength<T> value) minLength,
     required TResult Function(InvalidTelephone<T> value) invalidTelephone,
   }) {
     return empty(this);
@@ -504,6 +526,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(Empty<T> value)? empty,
     TResult Function(MaxLength<T> value)? maxLength,
+    TResult Function(MinLength<T> value)? minLength,
     TResult Function(InvalidTelephone<T> value)? invalidTelephone,
     required TResult orElse(),
   }) {
@@ -609,6 +632,7 @@ class _$MaxLength<T> implements MaxLength<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue, int maxLength) maxLength,
+    required TResult Function(T failedValue, int minLength) minLength,
     required TResult Function(T failedValue) invalidTelephone,
   }) {
     return maxLength(failedValue, this.maxLength);
@@ -621,6 +645,7 @@ class _$MaxLength<T> implements MaxLength<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue, int maxLength)? maxLength,
+    TResult Function(T failedValue, int minLength)? minLength,
     TResult Function(T failedValue)? invalidTelephone,
     required TResult orElse(),
   }) {
@@ -637,6 +662,7 @@ class _$MaxLength<T> implements MaxLength<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(Empty<T> value) empty,
     required TResult Function(MaxLength<T> value) maxLength,
+    required TResult Function(MinLength<T> value) minLength,
     required TResult Function(InvalidTelephone<T> value) invalidTelephone,
   }) {
     return maxLength(this);
@@ -649,6 +675,7 @@ class _$MaxLength<T> implements MaxLength<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(Empty<T> value)? empty,
     TResult Function(MaxLength<T> value)? maxLength,
+    TResult Function(MinLength<T> value)? minLength,
     TResult Function(InvalidTelephone<T> value)? invalidTelephone,
     required TResult orElse(),
   }) {
@@ -669,6 +696,157 @@ abstract class MaxLength<T> implements ValueFailure<T> {
   @override
   @JsonKey(ignore: true)
   $MaxLengthCopyWith<T, MaxLength<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MinLengthCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $MinLengthCopyWith(
+          MinLength<T> value, $Res Function(MinLength<T>) then) =
+      _$MinLengthCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue, int minLength});
+}
+
+/// @nodoc
+class _$MinLengthCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $MinLengthCopyWith<T, $Res> {
+  _$MinLengthCopyWithImpl(
+      MinLength<T> _value, $Res Function(MinLength<T>) _then)
+      : super(_value, (v) => _then(v as MinLength<T>));
+
+  @override
+  MinLength<T> get _value => super._value as MinLength<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+    Object? minLength = freezed,
+  }) {
+    return _then(MinLength<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+      minLength: minLength == freezed
+          ? _value.minLength
+          : minLength // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MinLength<T> implements MinLength<T> {
+  const _$MinLength({required this.failedValue, required this.minLength});
+
+  @override
+  final T failedValue;
+  @override
+  final int minLength;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.minLength(failedValue: $failedValue, minLength: $minLength)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is MinLength<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)) &&
+            (identical(other.minLength, minLength) ||
+                const DeepCollectionEquality()
+                    .equals(other.minLength, minLength)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(failedValue) ^
+      const DeepCollectionEquality().hash(minLength);
+
+  @JsonKey(ignore: true)
+  @override
+  $MinLengthCopyWith<T, MinLength<T>> get copyWith =>
+      _$MinLengthCopyWithImpl<T, MinLength<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue, int maxLength) maxLength,
+    required TResult Function(T failedValue, int minLength) minLength,
+    required TResult Function(T failedValue) invalidTelephone,
+  }) {
+    return minLength(failedValue, this.minLength);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue, int maxLength)? maxLength,
+    TResult Function(T failedValue, int minLength)? minLength,
+    TResult Function(T failedValue)? invalidTelephone,
+    required TResult orElse(),
+  }) {
+    if (minLength != null) {
+      return minLength(failedValue, this.minLength);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(MaxLength<T> value) maxLength,
+    required TResult Function(MinLength<T> value) minLength,
+    required TResult Function(InvalidTelephone<T> value) invalidTelephone,
+  }) {
+    return minLength(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(MaxLength<T> value)? maxLength,
+    TResult Function(MinLength<T> value)? minLength,
+    TResult Function(InvalidTelephone<T> value)? invalidTelephone,
+    required TResult orElse(),
+  }) {
+    if (minLength != null) {
+      return minLength(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MinLength<T> implements ValueFailure<T> {
+  const factory MinLength({required T failedValue, required int minLength}) =
+      _$MinLength<T>;
+
+  @override
+  T get failedValue => throw _privateConstructorUsedError;
+  int get minLength => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  $MinLengthCopyWith<T, MinLength<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -744,6 +922,7 @@ class _$InvalidTelephone<T> implements InvalidTelephone<T> {
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) empty,
     required TResult Function(T failedValue, int maxLength) maxLength,
+    required TResult Function(T failedValue, int minLength) minLength,
     required TResult Function(T failedValue) invalidTelephone,
   }) {
     return invalidTelephone(failedValue);
@@ -756,6 +935,7 @@ class _$InvalidTelephone<T> implements InvalidTelephone<T> {
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? empty,
     TResult Function(T failedValue, int maxLength)? maxLength,
+    TResult Function(T failedValue, int minLength)? minLength,
     TResult Function(T failedValue)? invalidTelephone,
     required TResult orElse(),
   }) {
@@ -772,6 +952,7 @@ class _$InvalidTelephone<T> implements InvalidTelephone<T> {
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(Empty<T> value) empty,
     required TResult Function(MaxLength<T> value) maxLength,
+    required TResult Function(MinLength<T> value) minLength,
     required TResult Function(InvalidTelephone<T> value) invalidTelephone,
   }) {
     return invalidTelephone(this);
@@ -784,6 +965,7 @@ class _$InvalidTelephone<T> implements InvalidTelephone<T> {
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(Empty<T> value)? empty,
     TResult Function(MaxLength<T> value)? maxLength,
+    TResult Function(MinLength<T> value)? minLength,
     TResult Function(InvalidTelephone<T> value)? invalidTelephone,
     required TResult orElse(),
   }) {

@@ -13,6 +13,10 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
     required T failedValue,
     required int maxLength,
   }) = MaxLength<T>;
+  const factory ValueFailure.minLength({
+    required T failedValue,
+    required int minLength,
+  }) = MinLength<T>;
   const factory ValueFailure.invalidTelephone({required T failedValue}) =
       InvalidTelephone<T>;
 }

@@ -30,10 +30,12 @@ class FirstName extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   static const maxLength = 16;
+  static const minLength = 3;
 
   factory FirstName(String value) {
     return FirstName._(validateStringNotMaxLength(value, maxLength)
-        .flatMap(validateStringNotEmpty));
+        .flatMap(validateStringNotEmpty)
+        .flatMap((value) => validateStringNotMinLength(value, minLength)));
   }
 
   const FirstName._(this.value);
@@ -44,10 +46,12 @@ class SecondName extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   static const maxLength = 16;
+  static const minLength = 3;
 
   factory SecondName(String value) {
     return SecondName._(validateStringNotMaxLength(value, maxLength)
-        .flatMap(validateStringNotEmpty));
+        .flatMap(validateStringNotEmpty)
+        .flatMap((value) => validateStringNotMinLength(value, minLength)));
   }
 
   const SecondName._(this.value);
@@ -58,10 +62,12 @@ class Surname extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   static const maxLength = 16;
+  static const minLength = 3;
 
   factory Surname(String value) {
     return Surname._(validateStringNotMaxLength(value, maxLength)
-        .flatMap(validateStringNotEmpty));
+        .flatMap(validateStringNotEmpty)
+        .flatMap((value) => validateStringNotMinLength(value, minLength)));
   }
 
   const Surname._(this.value);
@@ -72,12 +78,14 @@ class Telephone extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   static const maxLength = 12;
+  static const minLength = 10;
 
   factory Telephone(String value) {
     return Telephone._(
       validateStringNotMaxLength(value, maxLength)
           .flatMap(validateStringNotEmpty)
-          .flatMap(validateTelephone),
+          .flatMap(validateTelephone)
+          .flatMap((value) => validateStringNotMinLength(value, minLength)),
     );
   }
 
